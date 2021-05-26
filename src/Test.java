@@ -21,12 +21,12 @@ public class Test {
         int readLine = Integer.parseInt(sc.nextLine());
 
         String getData = "";
-        boolean isIterate = false;
-        
         for (int i = 1; i <= readLine; i++) {
             out.println("입력===");
             getData = sc.nextLine();
-            isIterate = isPalindrome(getData);
+            isPalindrome(getData);
         }
+        
+        sc.close();
     }
 }
