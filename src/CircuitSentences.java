@@ -5,41 +5,25 @@ import static java.lang.System.out;
 public class CircuitSentences {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        String getData = "";
-        String[] getDataArray = null;
-        // String result = "";
+        out.print("문자열을 입력하세요 : ");
         
-        for (int i = 0; i < 3; i++) {
-            boolean isIterate = true;
+        String str = sc.nextLine();
+        char saveStr[] = new char[str.length()];
 
-            out.println("입력===");
-            getData = sc.nextLine();
-            // out.println(getData[0]);
-            // getDataArray = getData.split("");
-            
-            // for(int j = 0; j < getData.length(); j++){
-            //     for(int k = 0; k < getData.length(); k++){
-            //         if((j - k - 1) < getData.length() && getData.charAt(k) != getData.charAt(j - k - 1)){
-            //             out.println("출력===");
-            //             isIterate = false;
-            //         }
-            //     }
+        int count = 0;
 
-            //     if(isIterate){
-            //         out.println("출력===");
-            //         out.println(isIterate);
-            //     }
-            // }
-
-            // result += getData + "\n" + isIterate + "\n";
-            // result += "\n";
-            // out.println("출력===");
-            // out.println(isIterate);
+        for(int i = 0; i < str.length(); i++){
+            saveStr[i] = str.charAt(i);
         }
 
-        // out.println("출력===");
-        // out.println(result);
+        for(int i = 0; i < saveStr.length; i++){
+            if(saveStr[i] == 'l' && saveStr[i+1] == 'o' && saveStr[i+2] == 'v' && saveStr[i+3] == 'e'){
+                count++;
+            }
+        }
+
+        out.print(count);
+        
         sc.close();
     }
 }
