@@ -5,7 +5,7 @@ import static java.lang.System.out;
 import java.io.File;
 import java.io.FileWriter;
 
-public class ArithmeticSequence {
+public class Solution {
     public static Scanner readFile(){
         Scanner readFile = null;
         File file = new File("data1.txt");
@@ -30,23 +30,17 @@ public class ArithmeticSequence {
     }
 
     public static String getFile(Scanner fileReader){
-        String result = "";
-        return result;
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        int readLine = Integer.parseInt(sc.nextLine());
+        int readLine = Integer.parseInt(fileReader.nextLine());
 
         String getLine = "";
         int convertLine = 0;
-
+        
         int sum = 0;
+        String result = "";
 
         for(int i = 0; i < readLine; i++){
             sum = 0;
-            getLine = sc.nextLine();
+            getLine = fileReader.nextLine();
             convertLine = Integer.parseInt(getLine);
 
             for(int j = 1; j <= convertLine; j++){
@@ -57,10 +51,17 @@ public class ArithmeticSequence {
                 }
             }
 
+            result += "#" + (i + 1) + " " + sum + "\n";
             out.println(sum);
         }
         
+        return result;
+    }
 
+    public static void main(String[] args) {
+        Scanner sc = readFile();
+        String getData = getFile(sc);
+        writeFile(getData);
         sc.close();
     }
 }
