@@ -7,50 +7,28 @@ public class RecursiveFunction {
         Scanner sc = new Scanner(System.in);
 
         String str = sc.next();
-        String str1 = sc.next();
+        String splitStr[] = null;
+        int i = 0, cnt = 0;
+        int result = 0;
 
-        char saveStr[] = new char[str.length()];
-        char saveStr1[] = new char[str1.length()];
-        
-        int cnt = 0;
-        int cnt1 = 0;
-        int i = 0;
-        
+        int converter = 0;
+
         for(i = 0; i < str.length(); i++){
-            saveStr[i] = str.charAt(i);
-            cnt = i;
-        }
-        
-        for(i = 0; i < str1.length(); i++){
-            saveStr1[i] = str1.charAt(i);
-            cnt1 = i;
+            splitStr = str.split("");
         }
 
-        if(saveStr.length > saveStr1.length){
-            out.print(saveStr1);
-            out.print(" ");
-            out.print(saveStr);
-        } else if(saveStr.length < saveStr1.length){
-            out.print(saveStr);
-            out.print(" ");
-            out.print(saveStr1);
-        } else if(saveStr.length == saveStr1.length){
-            for(i = 0; i < saveStr1.length; i++){
-                if(saveStr[i] > saveStr1[i]){
-                    out.print(saveStr1);
-                    out.print(" ");
-                    out.print(saveStr);
-                    break;
-                } else if(saveStr[i] < saveStr1[i]){
-                    out.print(saveStr);
-                    out.print(" ");
-                    out.print(saveStr1);
-                    break;
-                } else {}
+        for(i = 0; i < splitStr.length; i++){
+            converter = Integer.parseInt(splitStr[i]);
+            cnt += converter;
+        
+            if(cnt > 1 && cnt % 3 == 0){
+                result = 1;
+            } else if(cnt % 3 != 0){
+                result = 0;
             }
         }
 
-        out.println();
+        out.println(result);
 
         sc.close();
     }
