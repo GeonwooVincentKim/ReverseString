@@ -5,30 +5,31 @@ import java.util.Scanner;
 public class RecursiveFunction {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        String str3 = sc.nextLine();
 
-        String str = sc.next();
-        String splitStr[] = null;
-        int i = 0, cnt = 0;
-        int result = 0;
+        char strSave[] = new char[str1.length()];
+        char strSave2[] = new char[str2.length()];
+        char strSave3[] = new char[str3.length()];
 
-        int converter = 0;
-
-        for(i = 0; i < str.length(); i++){
-            splitStr = str.split("");
+        for(int i = 0; i < str1.length(); i++){
+            strSave[i] = str1.charAt(i);
         }
 
-        for(i = 0; i < splitStr.length; i++){
-            converter = Integer.parseInt(splitStr[i]);
-            cnt += converter;
-        
-            if(cnt > 1 && cnt % 3 == 0){
-                result = 1;
-            } else if(cnt % 3 != 0){
-                result = 0;
-            }
+        for(int i = 0; i < str2.length(); i++){
+            strSave2[i] = str2.charAt(i);
         }
 
-        out.println(result);
+        for(int i = 0; i < str3.length(); i++){
+            strSave3[i] = str3.charAt(i);
+        }
+
+        if(strSave[0] == strSave3[strSave3.length - 1] && strSave2[0] == strSave[strSave.length - 1] && strSave3[0] == strSave2[strSave2.length - 1]){
+            out.println("good");
+        } else {
+            out.println("bad");
+        }
 
         sc.close();
     }
