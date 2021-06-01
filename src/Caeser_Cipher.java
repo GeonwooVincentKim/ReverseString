@@ -18,14 +18,14 @@ public class Caeser_Cipher {
             if (storeStr[i] == ' ') {
                 storeStr[i] = ' ';
             } else if (storeStr[i] != ' ') {
-                if (storeStr[i] == 'a') {
-                    storeStr[i] = (char) 'x';
-                } else if (storeStr[i] == 'b') {
-                    storeStr[i] = (char) 'y';
-                } else if (storeStr[i] == 'c') {
-                    storeStr[i] = (char) 'z';
+                if (storeStr[i] == 'x') {
+                    storeStr[i] = (char) 'a';
+                } else if (storeStr[i] == 'y') {
+                    storeStr[i] = (char) 'b';
+                } else if (storeStr[i] == 'z') {
+                    storeStr[i] = (char) 'c';
                 } else {
-                    convertInt = convertInt - 3;
+                    convertInt = convertInt + 3;
                     storeStr[i] = (char) convertInt;
                 }
             }
